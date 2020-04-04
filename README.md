@@ -60,6 +60,11 @@ import com.framework.web.annotations.Component;
 import test.models.Person;
 @Component
 public class PersonRepository extends CrudRepository<Person, Long> {
+ /*  *** WARNING ***
+  here is my bad
+  personRepository.findById and any similar method should return Optional<T> ;/
+  here is my implementation: https://github.com/pallad42/CRUD-framework/blob/master/com-framework/src/main/java/com/framework/orm/CrudRepository.java
+ */
 }
 ```
 
@@ -93,7 +98,7 @@ public class PersonController {
 
  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
  public Person personsFindById(@PathVariable("id") long id) {
-  return personRepository.findById(id); // personRepository.findById and any similar method should return Optional<Person> ;/
+  return personRepository.findById(id);
  }
 
  @RequestMapping(value = "/save", method = RequestMethod.GET)
