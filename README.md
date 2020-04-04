@@ -93,7 +93,7 @@ public class PersonController {
 
  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
  public Person personsFindById(@PathVariable("id") long id) {
-  return personRepository.findById(id); // should return Optional<Person> ;/
+  return personRepository.findById(id); // personRepository.findById and any similar method should return Optional<Person> ;/
  }
 
  @RequestMapping(value = "/save", method = RequestMethod.GET)
