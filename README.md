@@ -37,7 +37,7 @@ import com.framework.web.annotations.TableName;
 
 @Entity
 @TableName("mypersons")
-@Seeder(5) // create random 5 persons after creating table, and send data to database
+@Seeder(5) // create 5 random persons after creating table and send data to database
 public class Person {
  @Id
  @GeneratedValue
