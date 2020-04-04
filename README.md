@@ -45,7 +45,7 @@ public class Person {
  private String firstname;
  private Integer age;
 
- // getters and setters [VERY IMPORTANT]
+ // getters and setters (VERY IMPORTANT!)
 }
 ```
 
@@ -61,7 +61,7 @@ import test.models.Person;
 @Component
 public class PersonRepository extends CrudRepository<Person, Long> {
  /*  *** WARNING ***
-  here is my bad
+  here is a mistake
   personRepository.findById and any similar method should return Optional<T> ;/
   here is my implementation: https://github.com/pallad42/CRUD-framework/blob/master/com-framework/src/main/java/com/framework/orm/CrudRepository.java
  */
