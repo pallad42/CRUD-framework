@@ -133,18 +133,18 @@ public class PersonController {
 
 ## Available built-in annotations
 https://github.com/pallad42/CRUD-framework/tree/master/com-framework/src/main/java/com/framework/web/annotations
-#### Autowired
-#### Component
-#### Controller
-#### Entity
-#### GeneratedValue
-#### Id
-#### PathVariable
-#### Qualifier
-#### RequestBody
-#### RequestMapping
-#### RequestParam
-#### ResponseBody
-#### RestController
-#### Seeder
-#### TableName
+- Autowired
+- Component
+- Controller
+- Entity
+- GeneratedValue
+- Id
+- PathVariable
+- Qualifier
+- RequestBody
+- RequestMapping
+- RequestParam
+- ResponseBody
+- RestController
+- Seeder
+- TableName
