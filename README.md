@@ -4,7 +4,7 @@ My own a'la framework in Java, slightly similar to basic Spring Boot.
 ### Application properties
 src/main/resources/application.properties
 ```java
-db.driver=com.mysql.cj.jdbc.Driver
+db.driver=com.mysql.cj.jdbc.Driver // I tested only mysql
 db.url=jdbc:mysql://localhost:3306/testdb
 db.username=root
 db.password=
