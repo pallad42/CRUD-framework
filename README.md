@@ -1,4 +1,4 @@
-My own a'la framework in Java, slightly similar to Spring Boot.
+My own a'la framework in Java, slightly similar to basic Spring Boot.
 
 ## Example of using
 Application properties
@@ -10,7 +10,6 @@ db.username=root
 db.password=
 ```
 
-> 
 ### Started class
 src/main/java/test/MyApplication.java
 ```java
@@ -28,7 +27,6 @@ public class MyApplication {
 ### Entity/Model
 src/main/java/test/models/Person.java
 ```java
-  
 package test.models;
 
 import com.framework.web.annotations.Entity;
@@ -62,5 +60,73 @@ import com.framework.web.annotations.Component;
 import test.models.Person;
 @Component
 public class PersonRepository extends CrudRepository<Person, Long> {
+}
+```
+
+### RestController
+src/main/java/test/controllers/PersonController.java
+```java
+package test.controllers;
+
+import java.util.Collection;
+
+import com.framework.web.annotations.Autowired;
+import com.framework.web.annotations.PathVariable;
+import com.framework.web.annotations.RequestBody;
+import com.framework.web.annotations.RequestMapping;
+import com.framework.web.annotations.RestController;
+import com.framework.web.enums.RequestMethod;
+
+import test.models.Person;
+import test.repositories.PersonRepository;
+
+@RestController
+@RequestMapping("/persons")
+public class PersonController {
+@Autowired
+ private PersonRepository personRepository;
+
+ @RequestMapping(value = "", method = RequestMethod.GET)
+ public Collection<Person> personsFindAll() {
+  return personRepository.findAll();
+ }
+
+ @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+ public Person personsFindById(@PathVariable("id") long id) {
+  return personRepository.findById(id);
+ }
+
+ @RequestMapping(value = "/save", method = RequestMethod.GET)
+ public Person personsSave(@RequestBody Person person) {
+  return personRepository.save(person);
+ }
+
+ @RequestMapping(value = "", method = RequestMethod.DELETE)
+ public Collection<Person> personsDelete(@RequestBody Person person) {
+  personRepository.delete(person);
+  return personRepository.findAll();
+ }
+
+ @RequestMapping(value = "/all", method = RequestMethod.DELETE)
+ public Collection<Person> personsDeleteAll() {
+  personRepository.deleteAll();
+  return personRepository.findAll();
+ }
+
+ @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+ public Collection<Person> personsDeleteById(@PathVariable("id") long id) {
+  personRepository.deleteById(id);
+  return personRepository.findAll();
+ }
+
+ @RequestMapping(value = "/count", method = RequestMethod.GET)
+ public long personsCount() {
+  return personRepository.count();
+ }
+
+ @RequestMapping(value = "/exists/{id}", method = RequestMethod.GET)
+ public boolean personsExists(@PathVariable("id") long id) {
+  return personRepository.existsById(id);
+ }
 }
 ```
