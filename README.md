@@ -1,7 +1,7 @@
 My own a'la framework in Java, slightly similar to basic Spring Boot.
 
 ## Example of using
-Application properties
+### Application properties
 src/main/resources/application.properties
 ```java
 db.driver=com.mysql.cj.jdbc.Driver
