@@ -83,7 +83,7 @@ import test.repositories.PersonRepository;
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
-@Autowired
+ @Autowired
  private PersonRepository personRepository;
 
  @RequestMapping(value = "", method = RequestMethod.GET)
@@ -93,7 +93,7 @@ public class PersonController {
 
  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
  public Person personsFindById(@PathVariable("id") long id) {
-  return personRepository.findById(id);
+  return personRepository.findById(id); // should return Optional<Person> ;/
  }
 
  @RequestMapping(value = "/save", method = RequestMethod.GET)
