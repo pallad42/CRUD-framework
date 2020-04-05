@@ -10,7 +10,7 @@ db.username=root
 db.password=
 ```
 
-### Started class
+### Starting class
 src/main/java/test/MyApplication.java
 ```java
 package test;
