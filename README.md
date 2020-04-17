@@ -1,4 +1,4 @@
-My own a'la framework in Java, slightly similar to basic Spring Boot.
+My own a'la framework in Java, slightly similar to basic Spring Boot. Multithreading (per request) using pure sockets.
 
 ## Example of using
 ### Application properties
